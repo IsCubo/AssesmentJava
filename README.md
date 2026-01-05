@@ -90,112 +90,116 @@ To run the unit tests manually (requires Java installed):
 ├── mvnw.cmd
 ├── pom.xml
 ├── README.md
-├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com
-│   │   │       └── riwi
-│   │   │           └── assesmentjava
-│   │   │               ├── application
-│   │   │               │   ├── dto
-│   │   │               │   ├── exception
-│   │   │               │   ├── ports
-│   │   │               │   └── usecases
-│   │   │               ├── AssesmentJavaApplication.java
-│   │   │               ├── domain
-│   │   │               │   └── model
-│   │   │               └── infrastructure
-│   │   │                   ├── adapters
-│   │   │                   └── config
-│   │   └── resources
-│   │       ├── application.yml
-│   │       ├── db
-│   │       │   └── migration
-│   │       │       ├── V1__Create_Tables.sql
-│   │       │       ├── V2__Add_Relations.sql
-│   │       │       └── V3__Insert_Test_Data.sql
-│   │       ├── static
-│   │       │   ├── dashboard.html
-│   │       │   └── index.html
-│   │       └── templates
-│   └── test
-│       └── java
-│           └── com
-│               └── riwi
-│                   └── assesmentjava
-│                       ├── application
-│                       │   └── usecases
-│                       └── AssesmentJavaApplicationTests.java
-└── target
-    ├── classes
-    │   ├── application.yml
-    │   ├── com
-    │   │   └── riwi
-    │   │       └── assesmentjava
-    │   │           ├── application
-    │   │           │   ├── dto
-    │   │           │   │   ├── CreateProjectCommand$CreateProjectCommandBuilder.class
-    │   │           │   │   ├── CreateProjectCommand.class
-    │   │           │   │   ├── CreateTaskCommand$CreateTaskCommandBuilder.class
-    │   │           │   │   ├── CreateTaskCommand.class
-    │   │           │   │   ├── ProjectDTO$ProjectDTOBuilder.class
-    │   │           │   │   ├── ProjectDTO.class
-    │   │           │   │   ├── TaskDTO$TaskDTOBuilder.class
-    │   │           │   │   └── TaskDTO.class
-    │   │           │   ├── exception
-    │   │           │   │   ├── BusinessRuleException.class
-    │   │           │   │   ├── EntityNotFoundException.class
-    │   │           │   │   └── UnauthorizedAccessException.class
-    │   │           │   ├── ports
-    │   │           │   │   ├── in
-    │   │           │   │   └── out
-    │   │           │   └── usecases
-    │   │           │       ├── ActivateProjectUseCaseImpl.class
-    │   │           │       ├── CompleteTaskUseCaseImpl.class
-    │   │           │       ├── CreateProjectUseCaseImpl.class
-    │   │           │       ├── CreateTaskUseCaseImpl.class
-    │   │           │       ├── GetProjectTasksUseCaseImpl.class
-    │   │           │       ├── GetUserProjectsUseCaseImpl.class
-    │   │           │       └── RegisterUserUseCaseImpl.class
-    │   │           ├── AssesmentJavaApplication.class
-    │   │           ├── domain
-    │   │           │   └── model
-    │   │           │       ├── Proyect$Status.class
-    │   │           │       ├── Proyect.class
-    │   │           │       ├── Tasks.class
-    │   │           │       └── User.class
-    │   │           └── infrastructure
-    │   │               ├── adapters
-    │   │               │   ├── in
-    │   │               │   └── out
-    │   │               └── config
-    │   │                   ├── ApplicationConfig.class
-    │   │                   ├── SecurityConfig.class
-    │   │                   └── SwaggerConfig.class
-    │   ├── db
-    │   │   └── migration
-    │   │       ├── V1__Create_Tables.sql
-    │   │       ├── V2__Add_Relations.sql
-    │   │       └── V3__Insert_Test_Data.sql
-    │   └── static
-    │       ├── dashboard.html
-    │       └── index.html
-    ├── generated-sources
-    │   └── annotations
-    ├── generated-test-sources
-    │   └── test-annotations
-    ├── maven-status
-    │   └── maven-compiler-plugin
-    │       └── compile
-    │           └── default-compile
-    │               ├── createdFiles.lst
-    │               └── inputFiles.lst
-    └── test-classes
-        └── com
-            └── riwi
-                └── assesmentjava
-                    ├── application
-                    │   └── usecases
-                    │       └── UseCaseTests.class
-                    └── AssesmentJavaApplicationTests.class
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── com
+    │   │       └── riwi
+    │   │           └── assesmentjava
+    │   │               ├── application
+    │   │               │   ├── dto
+    │   │               │   │   ├── CreateProjectCommand.java
+    │   │               │   │   ├── CreateTaskCommand.java
+    │   │               │   │   ├── ProjectDTO.java
+    │   │               │   │   └── TaskDTO.java
+    │   │               │   ├── exception
+    │   │               │   │   ├── BusinessRuleException.java
+    │   │               │   │   ├── EntityNotFoundException.java
+    │   │               │   │   └── UnauthorizedAccessException.java
+    │   │               │   ├── ports
+    │   │               │   │   ├── in
+    │   │               │   │   │   ├── ActivateProjectUseCase.java
+    │   │               │   │   │   ├── CompleteTaskUseCase.java
+    │   │               │   │   │   ├── CreateProjectUseCase.java
+    │   │               │   │   │   ├── CreateTaskUseCase.java
+    │   │               │   │   │   ├── GetProjectTasksUseCase.java
+    │   │               │   │   │   ├── GetUserProjectsUseCase.java
+    │   │               │   │   │   └── RegisterUserUseCase.java
+    │   │               │   │   └── out
+    │   │               │   │       ├── AuditLogPort.java
+    │   │               │   │       ├── CurrentUserPort.java
+    │   │               │   │       ├── NotificationPort.java
+    │   │               │   │       ├── ProjectRepositoryPort.java
+    │   │               │   │       ├── TaskRepositoryPort.java
+    │   │               │   │       └── UserRepositoryPort.java
+    │   │               │   └── usecases
+    │   │               │       ├── ActivateProjectUseCaseImpl.java
+    │   │               │       ├── CompleteTaskUseCaseImpl.java
+    │   │               │       ├── CreateProjectUseCaseImpl.java
+    │   │               │       ├── CreateTaskUseCaseImpl.java
+    │   │               │       ├── GetProjectTasksUseCaseImpl.java
+    │   │               │       ├── GetUserProjectsUseCaseImpl.java
+    │   │               │       └── RegisterUserUseCaseImpl.java
+    │   │               ├── AssesmentJavaApplication.java
+    │   │               ├── domain
+    │   │               │   └── model
+    │   │               │       ├── Proyect.java
+    │   │               │       ├── Tasks.java
+    │   │               │       └── User.java
+    │   │               └── infrastructure
+    │   │                   ├── adapters
+    │   │                   │   ├── in
+    │   │                   │   │   └── rest
+    │   │                   │   │       ├── AuthController.java
+    │   │                   │   │       ├── dto
+    │   │                   │   │       │   ├── AuthResponse.java
+    │   │                   │   │       │   ├── ErrorResponse.java
+    │   │                   │   │       │   ├── LoginRequest.java
+    │   │                   │   │       │   └── RegisterRequest.java
+    │   │                   │   │       ├── exception
+    │   │                   │   │       │   └── GlobalExceptionHandler.java
+    │   │                   │   │       ├── ProjectController.java
+    │   │                   │   │       └── TaskController.java
+    │   │                   │   └── out
+    │   │                   │       ├── audit
+    │   │                   │       │   └── AuditLogAdapter.java
+    │   │                   │       ├── notification
+    │   │                   │       │   └── NotificationAdapter.java
+    │   │                   │       ├── persistence
+    │   │                   │       │   ├── adapters
+    │   │                   │       │   │   ├── ProjectRepositoryAdapter.java
+    │   │                   │       │   │   ├── TaskRepositoryAdapter.java
+    │   │                   │       │   │   └── UserRepositoryAdapter.java
+    │   │                   │       │   ├── entities
+    │   │                   │       │   │   ├── ProjectEntity.java
+    │   │                   │       │   │   ├── TaskEntity.java
+    │   │                   │       │   │   └── UserEntity.java
+    │   │                   │       │   ├── mappers
+    │   │                   │       │   │   ├── ProjectMapper.java
+    │   │                   │       │   │   ├── TaskMapper.java
+    │   │                   │       │   │   └── UserMapper.java
+    │   │                   │       │   └── repositories
+    │   │                   │       │       ├── ProjectJpaRepository.java
+    │   │                   │       │       ├── TaskJpaRepository.java
+    │   │                   │       │       └── UserJpaRepository.java
+    │   │                   │       └── security
+    │   │                   │           ├── CurrentUserAdapter.java
+    │   │                   │           ├── CustomUserDetailsService.java
+    │   │                   │           └── jwt
+    │   │                   │               ├── JwtAuthFilter.java
+    │   │                   │               └── JwtUtil.java
+    │   │                   └── config
+    │   │                       ├── ApplicationConfig.java
+    │   │                       ├── SecurityConfig.java
+    │   │                       └── SwaggerConfig.java
+    │   └── resources
+    │       ├── application.yml
+    │       ├── db
+    │       │   └── migration
+    │       │       ├── V1__Create_Tables.sql
+    │       │       ├── V2__Add_Relations.sql
+    │       │       └── V3__Insert_Test_Data.sql
+    │       ├── static
+    │       │   ├── dashboard.html
+    │       │   └── index.html
+    │       └── templates
+    └── test
+        └── java
+            └── com
+                └── riwi
+                    └── assesmentjava
+                        ├── application
+                        │   └── usecases
+                        │       └── UseCaseTests.java
+                        └── AssesmentJavaApplicationTests.java
 ```
