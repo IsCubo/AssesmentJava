@@ -1,0 +1,22 @@
+CREATE TABLE users (
+    id UUID PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE projects (
+    id UUID PRIMARY KEY,
+    owner_id UUID NOT NULL,
+    name VARCHAR(200) NOT NULL,
+    status VARCHAR(20) NOT NULL,
+    deleted BOOLEAN NOT NULL DEFAULT FALSE
+);
+
+CREATE TABLE tasks (
+    id UUID PRIMARY KEY,
+    project_id UUID NOT NULL,
+    title VARCHAR(500) NOT NULL,
+    completed BOOLEAN NOT NULL DEFAULT FALSE,
+    deleted BOOLEAN NOT NULL DEFAULT FALSE
+);
